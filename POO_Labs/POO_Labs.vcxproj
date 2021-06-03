@@ -23,11 +23,13 @@
     <ClCompile Include="FirstLab.cpp" />
     <ClCompile Include="SecondLab.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="ThirdLab.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomException.h" />
     <ClInclude Include="FirstLab.h" />
     <ClInclude Include="SecondLab.h" />
+    <ClInclude Include="ThirdLab.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="cin.txt" />
