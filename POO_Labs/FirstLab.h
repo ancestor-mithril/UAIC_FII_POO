@@ -7,6 +7,7 @@
 namespace first_lab {
 	class FirstExercise {
 		int _sum = 0;
+		void computeSum(std::ifstream& targetFile);
 	public:
 		explicit FirstExercise(const std::string& filePath = "./in.txt");
 		FirstExercise(const FirstExercise& other) = delete;

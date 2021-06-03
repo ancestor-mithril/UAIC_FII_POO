@@ -24,6 +24,7 @@
     <ClCompile Include="FirstLab.cpp" />
     <ClCompile Include="FourthLab.cpp" />
     <ClCompile Include="SecondLab.cpp" />
+    <ClCompile Include="SixthLab.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="ThirdLab.cpp" />
   </ItemGroup>
@@ -33,6 +34,7 @@
     <ClInclude Include="FirstLab.h" />
     <ClInclude Include="FourthLab.h" />
     <ClInclude Include="SecondLab.h" />
+    <ClInclude Include="SixthLab.h" />
     <ClInclude Include="ThirdLab.h" />
   </ItemGroup>
   <ItemGroup>

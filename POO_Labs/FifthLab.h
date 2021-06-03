@@ -16,7 +16,7 @@ namespace fifth_lab
 		Number& operator=(const Number& other) = default;
 		Number& operator=(Number&& other) = default;
 		Number& operator=(int);
-		Number& operator=(const char *);
+		Number& operator=(const char*);
 		~Number() = default;
 
 		void SwitchBase(int newBase);
@@ -31,7 +31,7 @@ namespace fifth_lab
 		Number& operator--();
 		Number& operator--(int);
 		Number& operator+=(Number&);
-		
+
 		friend Number operator+(const Number&, const Number&);
 		friend Number operator-(const Number&, const Number&);
 		friend bool operator>(const Number&, const Number&);

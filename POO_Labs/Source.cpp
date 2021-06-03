@@ -4,6 +4,7 @@
 #include "FirstLab.h"
 #include "FourthLab.h"
 #include "SecondLab.h"
+#include "SixthLab.h"
 #include "ThirdLab.h"
 
 
@@ -15,6 +16,7 @@ void labThreeExOne();
 void labThreeExTwo();
 void labFour();
 void labFive();
+void labSix();
 
 int main(int argc, const char* argv[])
 {
@@ -26,6 +28,7 @@ int main(int argc, const char* argv[])
 	labThreeExTwo();
 	labFour();
 	labFive();
+	labSix();
 	return 0;
 }
 
@@ -194,4 +197,27 @@ void labFive()
 	n4.Print();
 	n4--; // the last digit from n4 will be remove ==> n4 becomes 357
 	n4.Print();
+}
+
+void labSix()
+{
+	using sixth_lab::Circuit;
+	using sixth_lab::Weather;
+	using sixth_lab::Dacia;
+	using sixth_lab::Toyota;
+	using sixth_lab::Mazda;
+	using sixth_lab::Mercedes;
+	using sixth_lab::Ford;
+	
+	Circuit c;
+	c.SetLength(100);
+	c.SetWeather(Weather::Rain);
+	c.AddCar(new Dacia());
+	c.AddCar(new Toyota());
+	c.AddCar(new Mercedes());
+	c.AddCar(new Ford());
+	c.AddCar(new Mazda());
+	c.Race();
+	c.ShowFinalRanks(); // it will print the time each car needed to finish the circuit sorted from the fastest car to the slowest.
+	c.ShowWhoDidNotFinis(); // it is possible that some cars don't have enough fuel to finish the circuit
 }

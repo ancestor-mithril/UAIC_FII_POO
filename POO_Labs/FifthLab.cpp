@@ -15,7 +15,7 @@ fifth_lab::Number::Number(const char* value, int base) : _value(value), _base(ba
 	}
 }
 
-fifth_lab::Number::Number(int number) : Number(std::to_string(number).c_str(), 10)
+fifth_lab::Number::Number(const int number) : Number(std::to_string(number).c_str(), 10)
 {
 }
 
@@ -32,7 +32,7 @@ fifth_lab::Number& fifth_lab::Number::operator=(const int number)
 
 fifth_lab::Number& fifth_lab::Number::operator=(const char* number)
 {
-	auto aux = Number(number, 10);
+	const auto aux = Number(number, 10);
 	*this = aux;
 	return *this;
 }

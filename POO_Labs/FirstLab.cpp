@@ -8,6 +8,14 @@
 #include "CustomException.h"
 
 
+void first_lab::FirstExercise::computeSum(std::ifstream& targetFile)
+{
+	int numberOnLine;
+	while (targetFile >> numberOnLine) {
+		_sum += numberOnLine;
+	}
+}
+
 first_lab::FirstExercise::FirstExercise(const std::string& filePath)
 {
 	std::ifstream targetFile(filePath);
@@ -16,10 +24,7 @@ first_lab::FirstExercise::FirstExercise(const std::string& filePath)
 		errorMessage << "File " << filePath << " couldn't be opened";
 		throw utils::CustomException(errorMessage.str());
 	}
-	int numberOnLine;
-	while (targetFile >> numberOnLine) {
-		_sum += numberOnLine;
-	}
+	computeSum(targetFile);
 }
 
 
