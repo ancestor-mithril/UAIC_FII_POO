@@ -39,6 +39,9 @@
     <ClCompile Include="SixthLab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SeventhLab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FirstLab.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SixthLab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SeventhLab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

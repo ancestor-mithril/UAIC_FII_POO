@@ -1,9 +1,11 @@
+#include <algorithm>
 #include <iostream>
 
 #include "FifthLab.h"
 #include "FirstLab.h"
 #include "FourthLab.h"
 #include "SecondLab.h"
+#include "SeventhLab.h"
 #include "SixthLab.h"
 #include "ThirdLab.h"
 
@@ -17,6 +19,8 @@ void labThreeExTwo();
 void labFour();
 void labFive();
 void labSix();
+void labSeventhExOne();
+void labSeventhExTwo();
 
 int main(int argc, const char* argv[])
 {
@@ -29,6 +33,8 @@ int main(int argc, const char* argv[])
 	labFour();
 	labFive();
 	labSix();
+	labSeventhExOne();
+	labSeventhExTwo();
 	return 0;
 }
 
@@ -36,6 +42,7 @@ int main(int argc, const char* argv[])
 void labOneExOne()
 {
 	using first_lab::FirstExercise;
+
 	const auto ex = FirstExercise();
 	std::cout << "Total sum " << ex.GetSum() << std::endl;
 }
@@ -43,7 +50,9 @@ void labOneExOne()
 void labOneExTwo()
 {
 	using first_lab::SecondExercise;
+
 	const auto result = SecondExercise().GetWords();
+
 	std::cout << "Sorted words: " << std::endl;
 	for (auto& word : result) {
 		std::cout << word << std::endl;
@@ -54,6 +63,7 @@ void labOneExTwo()
 void labTwoExOne()
 {
 	second_lab::NumberList numberList;
+
 	numberList.Init();
 	numberList.Add(1);
 	numberList.Add(51);
@@ -65,14 +75,17 @@ void labTwoExOne()
 void labTwoExTwo()
 {
 	using second_lab::Student;
+
 	auto st1 = Student("Name1");
 	st1.SetEnglishGrade(8);
 	st1.SetHistoryGrade(7);
 	st1.SetMathGrade(10);
+
 	auto st2 = Student("Name2");
 	st2.SetEnglishGrade(8);
 	st2.SetHistoryGrade(6);
 	st2.SetMathGrade(10);
+
 	std::cout << "Name comparison: " << st1.Name() << " ? " << st2.Name() << " -> " << compareName(st1, st2) << std::endl;
 	std::cout << "Math grade comparison: " << st1.MathGrade() << " ? " << st2.MathGrade() << " -> " << compareMathGrade(st1, st2) << std::endl;
 	std::cout << "History grade comparison: " << st1.HistoryGrade() << " ? " << st2.HistoryGrade() << " -> " << compareHistoryGrade(st1, st2) << std::endl;
@@ -83,8 +96,10 @@ void labTwoExTwo()
 void labThreeExOne()
 {
 	using third_lab::Math;
+
 	const int a = 2, b = 3, c = 4;
 	const double d = 1.4, e = 3.7, f = 5.6;
+
 	std::cout << a << " + " << b << " = " << Math::Add(a, b) << std::endl;
 	std::cout << a << " + " << b << " + " << c << " = " << Math::Add(a, b, c) << std::endl;
 	std::cout << d << " + " << e << " = " << Math::Add(d, e) << std::endl;
@@ -94,11 +109,13 @@ void labThreeExOne()
 	std::cout << d << " + " << e << " = " << Math::Mul(d, e) << std::endl;
 	std::cout << d << " + " << e << " + " << f << " = " << Math::Mul(d, e, f) << std::endl;
 	std::cout << a << " + " << b << " + " << c << " + " << d << " + " << e << " + " << f << " = " << Math::Add(6, a, b, c, d, e, f) << std::endl;
+
 	const auto sir1 = "sir1";
 	const auto sir2 = "sir2";
 	const char* const sir3 = nullptr;
 	const auto result1 = Math::Add(sir1, sir2);
 	const auto result2 = Math::Add(sir1, sir3);
+
 	std::cout << sir1 << " + " << sir2 << " = " << (result1 == nullptr ? "nullptr" : result1) << std::endl;
 	std::cout << sir1 << " + " << "nullptr" << " = " << (result2 == nullptr ? "nullptr" : result2) << std::endl;
 }
@@ -106,19 +123,24 @@ void labThreeExOne()
 void labThreeExTwo()
 {
 	using third_lab::Canvas;
+
 	Canvas canvas(10, 20);
 	std::cout << "Drawing circle: " << std::endl;
+
 	canvas.DrawCircle(5, 5, 3, '*');
 	canvas.Print();
 	canvas.Clear();
+
 	std::cout << "Filling circle: " << std::endl;
 	canvas.FillCircle(5, 5, 3, '*');
 	canvas.Print();
 	canvas.Clear();
+
 	std::cout << "Drawing rectangle: " << std::endl;
 	canvas.DrawRect(2, 2, 8, 8, '*');
 	canvas.Print();
 	canvas.Clear();
+
 	std::cout << "Filling rectangle: " << std::endl;
 	canvas.FillRect(2, 2, 8, 8, '*');
 	canvas.Print();
@@ -127,6 +149,7 @@ void labThreeExTwo()
 	canvas.SetPoint(5, 5, '*');
 	canvas.Print();
 	canvas.Clear();
+
 	std::cout << "Drawing line: " << std::endl;
 	canvas.DrawLine(2, 2, 8, 8, '*');
 	canvas.Print();
@@ -138,30 +161,42 @@ void labFour()
 	using forth_lab::Sort;
 	const std::vector<int> vector = { 1, 5, 2, 4, 5, 6, 3 };
 	int array[] = { 7, 3, 5, 6, 3, 4, 6, 2 };
+
 	Sort v1(10, 2, 100);
 	Sort v2(vector);
 	Sort v3(array, 8);
 	Sort v4({ 1, 3, 5,3 ,1 , 4, 3 });
+
 	std::string string("10,40,100,5,70");
 	Sort v5(string);
+
 	std::cout << std::endl << "v1" << std::endl;
 	v1.Print();
+
 	v1.BubbleSort();
 	v1.Print();
+
 	std::cout << std::endl << "v2" << std::endl;
 	v2.Print();
+
 	v2.QuickSort();
 	v2.Print();
+
 	std::cout << std::endl << "v3" << std::endl;
 	v3.Print();
+
 	v3.InsertSort();
 	v3.Print();
+
 	std::cout << std::endl << "v4" << std::endl;
 	v4.Print();
+
 	v4.BubbleSort();
 	v4.Print();
+
 	std::cout << std::endl << "v5" << std::endl;
 	v5.Print();
+
 	v5.BubbleSort();
 	v5.Print();
 }
@@ -208,7 +243,7 @@ void labSix()
 	using sixth_lab::Mazda;
 	using sixth_lab::Mercedes;
 	using sixth_lab::Ford;
-	
+
 	Circuit c;
 	c.SetLength(100);
 	c.SetWeather(Weather::Rain);
@@ -220,4 +255,50 @@ void labSix()
 	c.Race();
 	c.ShowFinalRanks(); // it will print the time each car needed to finish the circuit sorted from the fastest car to the slowest.
 	c.ShowWhoDidNotFinis(); // it is possible that some cars don't have enough fuel to finish the circuit
+}
+
+void labSeventhExOne()
+{
+	using seventh_lab::operator ""_Fahrenheit;
+	using seventh_lab::operator ""_Kelvin;
+	using seventh_lab::Degree;
+
+	const float a = static_cast<float>(300_Kelvin);
+	const float b = static_cast<float>(120_Fahrenheit);
+
+	std::cout << "300 Kelvin = " << a << " Celsius" << '\n';
+	std::cout << "120 Fahrenheit = " << b << " Celsius" << '\n';
+	std::cout << '\n';
+}
+
+void labSeventhExTwo()
+{
+	using seventh_lab::TemplateVector;
+	TemplateVector<int> vector;
+
+	vector.Push(10);
+	vector.Push(10);
+	vector.Push(11);
+	vector.Push(11);
+	vector.Push(9);
+	vector.Push(9);
+	vector.Push(9);
+
+	vector.Pop();
+	vector.Print();
+
+	vector.Delete(0);
+	vector.Print();
+
+	vector.Insert(10, 1);
+	vector.Print();
+
+	vector.Sort();
+	vector.Print();
+
+	vector.Set(11, 0);
+	std::cout << vector.Get(0) << "\n";
+	std::cout << vector.Count() << "\n";
+	std::cout << vector.FirstIndexOf(10) << "\n";
+	std::cout << "\n";
 }

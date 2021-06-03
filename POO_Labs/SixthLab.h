@@ -25,7 +25,7 @@ namespace sixth_lab
 		Car& operator=(const Car& other) = default;
 		Car& operator=(Car&& other) = default;
 		virtual ~Car() = default;
-		
+
 		virtual int FuelCapacity() = 0;
 		virtual int FuelConsumption() = 0;
 		virtual int AverageSpeed(Weather) = 0;
@@ -41,7 +41,7 @@ namespace sixth_lab
 		Dacia& operator=(const Dacia& other) = default;
 		Dacia& operator=(Dacia&& other) = default;
 		~Dacia() override = default;
-		
+
 		int FuelCapacity() override;
 		int FuelConsumption() override;
 		int AverageSpeed(Weather weather) override;
@@ -111,7 +111,7 @@ namespace sixth_lab
 		int AverageSpeed(Weather) override;
 		std::string Name() override;
 	};
-	
+
 	class Circuit
 	{
 		Weather _weather = Weather::Sunny;
