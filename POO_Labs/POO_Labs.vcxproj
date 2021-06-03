@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="CustomException.cpp" />
     <ClCompile Include="FirstLab.cpp" />
+    <ClCompile Include="FourthLab.cpp" />
     <ClCompile Include="SecondLab.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="ThirdLab.cpp" />
@@ -28,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="CustomException.h" />
     <ClInclude Include="FirstLab.h" />
+    <ClInclude Include="FourthLab.h" />
     <ClInclude Include="SecondLab.h" />
     <ClInclude Include="ThirdLab.h" />
   </ItemGroup>

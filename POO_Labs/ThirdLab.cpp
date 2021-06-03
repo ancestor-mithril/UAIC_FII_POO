@@ -74,7 +74,7 @@ char* third_lab::Math::Add(const char* a, const char* b)
 	return result;
 }
 
-third_lab::Canvas::Canvas(int width, int height): _width(width), _height(height)
+third_lab::Canvas::Canvas(int width, int height) : _width(width), _height(height)
 {
 	_matrix = new char* [height];
 	for (int line = 0; line < height; ++line)
@@ -114,7 +114,7 @@ void third_lab::Canvas::DrawRect(int left, int top, int right, int bottom, char 
 	{
 		throw utils::CustomException("Wrong rectangle coordinates");
 	}
-	for (int line = top; line < bottom; ++line) 
+	for (int line = top; line < bottom; ++line)
 	{
 		_matrix[line][right] = _matrix[line][left] = ch;
 		SetPoint(line, right, ch);

@@ -29,7 +29,7 @@ namespace second_lab
 		Student& operator=(const Student& other) = default;
 		Student& operator=(Student&& other) = default;
 		~Student() = default;
-		
+
 		float MathGrade() const;
 		float EnglishGrade() const;
 		float HistoryGrade() const;

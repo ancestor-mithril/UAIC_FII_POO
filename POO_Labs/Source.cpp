@@ -1,5 +1,6 @@
 #include <iostream>
 #include "FirstLab.h"
+#include "FourthLab.h"
 #include "SecondLab.h"
 #include "ThirdLab.h"
 
@@ -10,6 +11,7 @@ void labTwoExOne();
 void labTwoExTwo();
 void labThreeExOne();
 void labThreeExTwo();
+void labFour();
 
 int main(int argc, const char* argv[])
 {
@@ -19,6 +21,7 @@ int main(int argc, const char* argv[])
 	labTwoExTwo();
 	labThreeExOne();
 	labThreeExTwo();
+	labFour();
 	return 0;
 }
 
@@ -76,14 +79,14 @@ void labThreeExOne()
 	const int a = 2, b = 3, c = 4;
 	const double d = 1.4, e = 3.7, f = 5.6;
 	std::cout << a << " + " << b << " = " << Math::Add(a, b) << std::endl;
-	std::cout << a << " + " << b <<" + " << c << " = " << Math::Add(a, b, c) << std::endl;
+	std::cout << a << " + " << b << " + " << c << " = " << Math::Add(a, b, c) << std::endl;
 	std::cout << d << " + " << e << " = " << Math::Add(d, e) << std::endl;
-	std::cout << d << " + " << e <<" + " << f << " = " << Math::Add(d, e, f) << std::endl;
+	std::cout << d << " + " << e << " + " << f << " = " << Math::Add(d, e, f) << std::endl;
 	std::cout << a << " + " << b << " = " << Math::Mul(a, b) << std::endl;
-	std::cout << a << " + " << b <<" + " << c << " = " << Math::Mul(a, b, c) << std::endl;
+	std::cout << a << " + " << b << " + " << c << " = " << Math::Mul(a, b, c) << std::endl;
 	std::cout << d << " + " << e << " = " << Math::Mul(d, e) << std::endl;
-	std::cout << d << " + " << e <<" + " << f << " = " << Math::Mul(d, e, f) << std::endl;
-	std::cout << a << " + " << b << " + " << c << " + " << d << " + " << e <<" + " << f << " = " << Math::Add(6, a, b, c, d, e, f) << std::endl;
+	std::cout << d << " + " << e << " + " << f << " = " << Math::Mul(d, e, f) << std::endl;
+	std::cout << a << " + " << b << " + " << c << " + " << d << " + " << e << " + " << f << " = " << Math::Add(6, a, b, c, d, e, f) << std::endl;
 	const auto sir1 = "sir1";
 	const auto sir2 = "sir2";
 	const char* const sir3 = nullptr;
@@ -114,11 +117,44 @@ void labThreeExTwo()
 	canvas.Print();
 	canvas.Clear();
 	std::cout << "Setting point: " << std::endl;
-	canvas.SetPoint(5, 5,  '*');
+	canvas.SetPoint(5, 5, '*');
 	canvas.Print();
 	canvas.Clear();
 	std::cout << "Drawing line: " << std::endl;
 	canvas.DrawLine(2, 2, 8, 8, '*');
 	canvas.Print();
 	canvas.Clear();
+}
+
+void labFour()
+{
+	using forth_lab::Sort;
+	const std::vector<int> vector = { 1, 5, 2, 4, 5, 6, 3 };
+	int array[] = { 7, 3, 5, 6, 3, 4, 6, 2 };
+	Sort v1(10, 2, 100);
+	Sort v2(vector);
+	Sort v3(array, 8);
+	Sort v4({ 1, 3, 5,3 ,1 , 4, 3 });
+	std::string string("10,40,100,5,70");
+	Sort v5(string);
+	std::cout << std::endl << "v1" << std::endl;
+	v1.Print();
+	v1.BubbleSort();
+	v1.Print();
+	std::cout << std::endl << "v2" << std::endl;
+	v2.Print();
+	v2.QuickSort();
+	v2.Print();
+	std::cout << std::endl << "v3" << std::endl;
+	v3.Print();
+	v3.InsertSort();
+	v3.Print();
+	std::cout << std::endl << "v4" << std::endl;
+	v4.Print();
+	v4.BubbleSort();
+	v4.Print();
+	std::cout << std::endl << "v5" << std::endl;
+	v5.Print();
+	v5.BubbleSort();
+	v5.Print();
 }
