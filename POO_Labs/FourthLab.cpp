@@ -46,8 +46,13 @@ forth_lab::Sort::Sort(std::vector<int> data) : _data(std::move(data))
 
 forth_lab::Sort::Sort(int* vector, const int count)
 {
-	std::vector<int> vec(vector, vector + count);
-	_data = std::move(vec);
+	//std::vector<int> vec(vector, vector + count);
+	//_data = std::move(vec);
+
+	//std::copy_n(vector, count, std::back_inserter(_data));
+	//std::copy_n(vector, count, _data); // ERROR
+
+	_data.insert(_data.end(), &vector[0], &vector[count]);
 }
 
 forth_lab::Sort::Sort(const std::initializer_list<int> data) : _data(data)
