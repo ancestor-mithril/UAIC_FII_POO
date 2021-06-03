@@ -23,7 +23,12 @@ namespace second_lab
 		float _historyGrade;
 	public:
 		Student();
-		Student(std::string name);
+		explicit Student(std::string name);
+		Student(const Student& other) = default;
+		Student(Student&& other) = default;
+		Student& operator=(const Student& other) = default;
+		Student& operator=(Student&& other) = default;
+		~Student() = default;
 		
 		float MathGrade() const;
 		float EnglishGrade() const;
