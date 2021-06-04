@@ -5,6 +5,7 @@
 #include "FifthLab.h"
 #include "FirstLab.h"
 #include "FourthLab.h"
+#include "NinthLab.h"
 #include "SecondLab.h"
 #include "SeventhLab.h"
 #include "SixthLab.h"
@@ -23,6 +24,7 @@ void labSix();
 void labSeventhExOne();
 void labSeventhExTwo();
 void labEight();
+void labNinth();
 
 int main(int argc, const char* argv[])
 {
@@ -38,6 +40,7 @@ int main(int argc, const char* argv[])
 	labSeventhExOne();
 	labSeventhExTwo();
 	labEight();
+	labNinth();
 	return 0;
 }
 
@@ -316,5 +319,23 @@ void labEight()
 	lab.Sort();
 	lab.PrintMap();
 	lab.PrintSorted();
-	
+
+}
+
+void labNinth()
+{
+	using ninth_lab::Map;
+	Map<int, const char*> m;
+	m[10] = "C++";
+	m[20] = "test";
+	m[30] = "Poo";
+	for (auto [key, value, index] : m)
+	{
+		printf("Index:%d, Key=%d, Value=%s\n", index, key, value);
+	}
+	m[20] = "result";
+	for (auto [key, value, index] : m)
+	{
+		printf("Index:%d, Key=%d, Value=%s\n", index, key, value);
+	}
 }
