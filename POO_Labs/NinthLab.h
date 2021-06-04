@@ -4,7 +4,7 @@
 
 namespace ninth_lab
 {
-	
+
 	template<class T1, class T2>
 	class Map
 	{
@@ -21,7 +21,7 @@ namespace ninth_lab
 		Map<T1, T2>& end();
 		template<std::size_t Index>
 		std::tuple_element<Index, Map<T1, T2>>& get(Map<T1, T2>& map);
-		
+
 		void Set(T1& key, T2& value);
 		bool Get(const T1& key, T2& valueToBeCopied);
 		unsigned Count();
@@ -135,7 +135,7 @@ namespace ninth_lab
 	bool Map<T1, T2>::Delete(const T1& key)
 	{
 		auto it = std::find(_keys.begin(), _keys.end(), key);
-		if ( it == _keys.end())
+		if (it == _keys.end())
 		{
 			return false;
 		}
@@ -143,7 +143,7 @@ namespace ninth_lab
 		_keys.erase(index);
 		_values.erase(index);
 		return true;
-		
+
 	}
 
 	template <class T1, class T2>
@@ -154,7 +154,7 @@ namespace ninth_lab
 			if (std::find(_keys.begin(), _keys.end(), key) == _keys.end())
 			{
 				return false;
-			} 
+			}
 		}
 		return true;
 	}

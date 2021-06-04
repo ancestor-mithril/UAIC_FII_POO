@@ -29,6 +29,7 @@
     <ClCompile Include="SeventhLab.cpp" />
     <ClCompile Include="SixthLab.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TenthLab.cpp" />
     <ClCompile Include="ThirdLab.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -41,6 +42,7 @@
     <ClInclude Include="SecondLab.h" />
     <ClInclude Include="SeventhLab.h" />
     <ClInclude Include="SixthLab.h" />
+    <ClInclude Include="TenthLab.h" />
     <ClInclude Include="ThirdLab.h" />
   </ItemGroup>
   <ItemGroup>

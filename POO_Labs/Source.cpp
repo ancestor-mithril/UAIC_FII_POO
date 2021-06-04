@@ -9,6 +9,7 @@
 #include "SecondLab.h"
 #include "SeventhLab.h"
 #include "SixthLab.h"
+#include "TenthLab.h"
 #include "ThirdLab.h"
 
 
@@ -25,6 +26,7 @@ void labSeventhExOne();
 void labSeventhExTwo();
 void labEight();
 void labNinth();
+void labTenth();
 
 int main(int argc, const char* argv[])
 {
@@ -41,6 +43,7 @@ int main(int argc, const char* argv[])
 	labSeventhExTwo();
 	labEight();
 	labNinth();
+	labTenth();
 	return 0;
 }
 
@@ -312,6 +315,7 @@ void labSeventhExTwo()
 void labEight()
 {
 	using eighth_lab::EighthLab;
+
 	EighthLab lab{};
 	lab.TokenizeSentence();
 	lab.PrintWords();
@@ -325,6 +329,7 @@ void labEight()
 void labNinth()
 {
 	using ninth_lab::Map;
+
 	Map<int, const char*> m;
 	m[10] = "C++";
 	m[20] = "test";
@@ -338,4 +343,28 @@ void labNinth()
 	{
 		printf("Index:%d, Key=%d, Value=%s\n", index, key, value);
 	}
+}
+
+void labTenth()
+{
+	using tenth_lab::TenthLab;
+	using tenth_lab::MyVector;
+
+	TenthLab lab;
+	lab.Sort();
+	lab.Print();
+
+	MyVector vector;
+	vector.Add(10);
+	vector.Add(101);
+	vector.Add(12);
+	vector.Add(11);
+	vector.Add(13);
+
+	std::function lambda = [](int& nr) -> void
+	{
+		nr++;
+	};
+	vector.Iterate(lambda);
+	vector.Print();
 }
