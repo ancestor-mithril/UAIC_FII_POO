@@ -68,9 +68,9 @@ void eighth_lab::EighthLab::CountWords()
 		{
 			continue;
 		}
+		
 		auto lowerCaseWord = stringToLower(word);
-		const auto it = _wordCount.find(lowerCaseWord);
-		if (it == _wordCount.end())
+		if (const auto it = _wordCount.find(lowerCaseWord); it == _wordCount.end())
 		{
 			_wordCount.emplace(std::make_pair(lowerCaseWord, 1));
 		}
@@ -83,17 +83,18 @@ void eighth_lab::EighthLab::CountWords()
 
 void eighth_lab::EighthLab::Sort()
 {
-	std::function<bool(std::string&, std::string&)> compare = [&](std::string& str1, std::string& str2) -> bool
+	std::function compare = [&](std::string& str1, std::string& str2) -> bool
 	{
 		const auto count1 = _wordCount.find(str1)->second;
 		const auto count2 = _wordCount.find(str2)->second;
+		
 		return count1 == count2 ? str1 <= str2 : count1 <= count2;
 	};
 
 	std::priority_queue<std::string, std::vector<std::string>, decltype(compare)> queue(compare);
-	for (auto& word : _wordCount)
+	for (auto& [string, count] : _wordCount)
 	{
-		queue.push(word.first);
+		queue.push(string);
 	}
 
 	_queue = std::move(queue);
@@ -103,9 +104,9 @@ void eighth_lab::EighthLab::PrintMap() const
 {
 	std::cout << "Printing map: " << "\n" << "{" << "\n";
 
-	for (const auto& word : _wordCount)
+	for (const auto& [string, count] : _wordCount)
 	{
-		std::cout << "\t\"" << word.first << "\" : " << word.second << '\n';
+		std::cout << "\t\"" << string << "\" : " << count << '\n';
 	}
 
 	std::cout << "}" << '\n';

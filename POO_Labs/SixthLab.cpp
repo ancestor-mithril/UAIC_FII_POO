@@ -134,7 +134,7 @@ std::string sixth_lab::Mazda::Name()
 
 void sixth_lab::Circuit::sortFinalRanks()
 {
-	std::sort(_finalRanks.begin(), _finalRanks.end(), [](std::pair<int, Car*> p1, std::pair<int, Car*> p2)
+	std::sort(_finalRanks.begin(), _finalRanks.end(), [](const std::pair<int, Car*> p1, const std::pair<int, Car*> p2)
 		{
 			return p1.first < p2.first;
 		}
@@ -159,10 +159,10 @@ void sixth_lab::Circuit::AddCar(Car* car)
 void sixth_lab::Circuit::Race()
 {
 	std::vector<int> timeScore;
+	
 	for (auto car : _cars)
 	{
-		const auto time = _length / car->AverageSpeed(_weather);
-		if (time * car->FuelConsumption() <= car->FuelCapacity())
+		if (const auto time = _length / car->AverageSpeed(_weather); time * car->FuelConsumption() <= car->FuelCapacity())
 		{
 			timeScore.push_back(time);
 			_finalRanks.emplace_back(std::make_pair(time, car));
@@ -178,19 +178,23 @@ void sixth_lab::Circuit::Race()
 void sixth_lab::Circuit::ShowFinalRanks()
 {
 	std::cout << "Final Ranks: " << std::endl;
-	for (auto car : _finalRanks)
+	
+	for (auto [time, car] : _finalRanks)
 	{
-		std::cout << car.second->Name() << " -> time record: " << car.first << std::endl;
+		std::cout << car->Name() << " -> time record: " << time << std::endl;
 	}
+	
 	std::cout << std::endl;
 }
 
 void sixth_lab::Circuit::ShowWhoDidNotFinis()
 {
 	std::cout << "Cars which did not finish: " << std::endl;
+	
 	for (auto car : _dropouts)
 	{
 		std::cout << car->Name() << ", ";
 	}
+	
 	std::cout << std::endl;
 }

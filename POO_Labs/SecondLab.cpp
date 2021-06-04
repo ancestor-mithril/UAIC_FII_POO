@@ -10,11 +10,12 @@ void second_lab::NumberList::Init()
 	count = 0;
 }
 
-bool second_lab::NumberList::Add(int x)
+bool second_lab::NumberList::Add(const int x)
 {
 	if (count >= 10) {
 		return false;
 	}
+	
 	numbers[count++] = x;
 	return true;
 }
@@ -27,10 +28,19 @@ void second_lab::NumberList::Sort()
 void second_lab::NumberList::Print()
 {
 	std::cout << "Print numbers: " << std::endl;
+	
 	for (auto i = 0; i < count; ++i) {
 		std::cout << numbers[i] << " ";
 	}
+	
 	std::cout << std::endl;
+}
+
+void second_lab::Student::checkGrade(const float grade, const std::string& course) const
+{
+	if (grade < 1 || grade > 10) {
+		throw utils::CustomException(course + " grade must be between 1 and 10, not " + std::to_string(grade));
+	}
 }
 
 second_lab::Student::Student()
@@ -73,25 +83,19 @@ void second_lab::Student::SetName(const std::string& name)
 
 void second_lab::Student::SetMathGrade(const float mathGrade)
 {
-	if (mathGrade < 1 || mathGrade > 10) {
-		throw utils::CustomException("Math grade must be between 1 and 10, not " + std::to_string(mathGrade));
-	}
+	checkGrade(mathGrade, "Math");
 	_mathGrade = mathGrade;
 }
 
 void second_lab::Student::SetEnglishGrade(const float englishGrade)
 {
-	if (englishGrade < 1 || englishGrade > 10) {
-		throw utils::CustomException("Math grade must be between 1 and 10, not " + std::to_string(englishGrade));
-	}
+	checkGrade(englishGrade, "English");
 	_englishGrade = englishGrade;
 }
 
 void second_lab::Student::SetHistoryGrade(const float historyGrade)
 {
-	if (historyGrade < 1 || historyGrade > 10) {
-		throw utils::CustomException("Math grade must be between 1 and 10, not " + std::to_string(historyGrade));
-	}
+	checkGrade(historyGrade, "History");
 	_historyGrade = historyGrade;
 }
 

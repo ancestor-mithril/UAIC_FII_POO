@@ -1,15 +1,15 @@
 #include "CustomException.h"
 
-utils::CustomException::CustomException(const char* errorMessage) : errorMessage_(errorMessage)
+utils::CustomException::CustomException(const char* errorMessage) : _errorMessage(errorMessage)
 {
 }
 
-utils::CustomException::CustomException(std::string errorMessage = "Unknown error") : errorMessage_(std::move(errorMessage))
+utils::CustomException::CustomException(std::string errorMessage = "Unknown error") : _errorMessage(std::move(errorMessage))
 {
 }
 
 const char* utils::CustomException::what() const
 {
-	return errorMessage_.c_str();
+	return _errorMessage.c_str();
 }
 

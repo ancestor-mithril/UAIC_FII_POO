@@ -22,16 +22,18 @@ namespace third_lab
 		char** _matrix;
 		int _width;
 		int _height;
+		void circleVerification(int x, int y, int ray) const;
+		void rectangleVerification(int left, int right, int top, int bottom) const;
 	public:
 		Canvas(int width, int height);
-		void DrawCircle(int x, int y, int ray, char ch);
-		void FillCircle(int x, int y, int ray, char ch);
+		void DrawCircle(int x, int y, int ray, char ch) const;
+		void FillCircle(int x, int y, int ray, char ch) const;
 		void DrawRect(int left, int top, int right, int bottom, char ch);
-		void FillRect(int left, int top, int right, int bottom, char ch);
-		void SetPoint(int x, int y, char ch);
-		void DrawLine(int x1, int y1, int x2, int y2, char ch);
-		void Print(); // shows what was printed
-		void Clear(); // clears the canvas
+		void FillRect(int left, int top, int right, int bottom, char ch) const;
+		void SetPoint(int x, int y, char ch) const;
+		void DrawLine(int x1, int y1, int x2, int y2, char ch) const;
+		void Print() const; // shows what was printed
+		void Clear() const; // clears the canvas
 	};
 }
 

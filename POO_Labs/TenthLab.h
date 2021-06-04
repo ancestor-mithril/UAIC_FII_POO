@@ -12,7 +12,7 @@ namespace tenth_lab
 		TenthLab();
 		explicit TenthLab(std::vector<std::string> strings);
 		void Sort();
-		std::function<int(std::vector<int>&)> CreateLambda();
+		std::function<int(std::vector<int>&)> CreateLambda() const;
 		void Print();
 	};
 

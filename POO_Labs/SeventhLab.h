@@ -66,7 +66,7 @@ namespace seventh_lab
 		if (index < 0 || index >= _container.size())
 		{
 			throw std::out_of_range(std::to_string(index) + " is not in range");
-		}
+		} //TODO: add method to check index out of range
 
 		_container.erase(_container.begin() + index);
 	}
@@ -99,6 +99,7 @@ namespace seventh_lab
 				return static_cast<bool>(e1 < e2);
 			};
 		}
+		
 		std::sort(_container.begin(), _container.end(), comparisonFunction);
 	}
 

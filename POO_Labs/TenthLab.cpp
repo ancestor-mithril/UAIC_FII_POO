@@ -20,7 +20,7 @@ void tenth_lab::TenthLab::Sort()
 	);
 }
 
-std::function<int(std::vector<int>&)> tenth_lab::TenthLab::CreateLambda()
+std::function<int(std::vector<int>&)> tenth_lab::TenthLab::CreateLambda() const
 {
 	return [](std::vector<int>& vector) -> int
 	{
@@ -36,6 +36,7 @@ void tenth_lab::TenthLab::Print()
 	{
 		std::cout << value << '\n';
 	}
+	
 	std::cout << "\n";
 }
 
@@ -51,6 +52,7 @@ bool tenth_lab::MyVector::Delete(const int index)
 	{
 		return false;
 	}
+	
 	_vector.erase(_vector.begin() + index);
 	return true;
 }
@@ -69,13 +71,9 @@ void tenth_lab::MyVector::Filter(std::function<bool(int&)>& lambda)
 	{
 		if (lambda(*it))
 		{
-			++it;
-			_vector.erase(it - 1);
+			_vector.erase(it);
 		}
-		else
-		{
-			++it;
-		}
+		++it;
 	}
 }
 

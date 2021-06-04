@@ -34,12 +34,14 @@ namespace ninth_lab
 	T2& Map<T1, T2>::operator[](T1 key)
 	{
 		auto it = std::find(_keys.begin(), _keys.end(), key);
+		
 		if (it == _keys.end())
 		{
 			_keys.push_back(key);
 			_values.push_back(T2{});
 			return _values.back();
 		}
+		
 		auto index = it - _keys.begin();
 		return _values[index];
 	}
@@ -75,6 +77,7 @@ namespace ninth_lab
 	{
 		const int last = _keys.size()/* - 1*/;
 		_currentIndex = last;
+		
 		return *this;
 	}
 
@@ -135,15 +138,17 @@ namespace ninth_lab
 	bool Map<T1, T2>::Delete(const T1& key)
 	{
 		auto it = std::find(_keys.begin(), _keys.end(), key);
+		
 		if (it == _keys.end())
 		{
 			return false;
 		}
+		
 		auto index = it - _keys.begin();
 		_keys.erase(index);
 		_values.erase(index);
+		
 		return true;
-
 	}
 
 	template <class T1, class T2>
@@ -156,6 +161,7 @@ namespace ninth_lab
 				return false;
 			}
 		}
+		
 		return true;
 	}
 }

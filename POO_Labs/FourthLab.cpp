@@ -63,6 +63,7 @@ forth_lab::Sort::Sort(const std::initializer_list<int> data) : _data(data)
 forth_lab::Sort::Sort(std::string& data)
 {
 	std::stringstream dataTokenizer(data);
+	
 	for (int i; dataTokenizer >> i;)
 	{
 		_data.push_back(i);
@@ -76,6 +77,7 @@ forth_lab::Sort::Sort(std::string& data)
 void forth_lab::Sort::InsertSort(const bool ascendent) //select sort
 {
 	const auto n = _data.size();
+	
 	for (unsigned int i = 0; i < n - 1; ++i)
 	{
 		for (unsigned int j = i + 1; j < n; ++j)
@@ -91,11 +93,13 @@ void forth_lab::Sort::InsertSort(const bool ascendent) //select sort
 void forth_lab::Sort::QuickSort(bool ascendent)
 {
 	quickSort(0, _data.size() - 1);
+	//TODO: use ascendent
 }
 
 void forth_lab::Sort::BubbleSort(bool ascendent)
 {
 	const int n = _data.size();
+	
 	/*auto swapped = true;
 	while (swapped)
 	{
@@ -109,6 +113,7 @@ void forth_lab::Sort::BubbleSort(bool ascendent)
 			}
 		}
 	}*/
+	
 	for (int i = 0; i < n - 1; ++i)
 	{
 		for (int j = 0; j < n - i - 1; ++j)
@@ -119,6 +124,7 @@ void forth_lab::Sort::BubbleSort(bool ascendent)
 			}
 		}
 	}
+	//TODO: use ascendent
 }
 
 void forth_lab::Sort::Print()
@@ -141,6 +147,7 @@ int forth_lab::Sort::GetElementFromIndex(const int index)
 	{
 		throw std::out_of_range("Invalid index");
 	}
+	
 	return _data[index];
 }
 

@@ -5,8 +5,8 @@ namespace second_lab
 {
 	class NumberList
 	{
-		int numbers[10];
-		int count;
+		int numbers[10] = {0};
+		int count = 0;
 	public:
 		void Init();          // count will be 0
 		bool Add(int x);      // adds X to the numbers list and increase the data member count.
@@ -21,6 +21,7 @@ namespace second_lab
 		float _mathGrade;
 		float _englishGrade;
 		float _historyGrade;
+		void checkGrade(float grade, const std::string& course) const;
 	public:
 		Student();
 		explicit Student(std::string name);

@@ -20,9 +20,9 @@ namespace fifth_lab
 		~Number() = default;
 
 		void SwitchBase(int newBase);
-		void Print();
-		int  GetDigitsCount(); // returns the number of digits for the current number
-		int  GetBase(); // returns the current base
+		void Print() const;
+		int  GetDigitsCount() const; // returns the number of digits for the current number
+		int  GetBase() const; // returns the current base
 		void Negate();
 
 		bool operator! () const;

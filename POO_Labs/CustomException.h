@@ -3,11 +3,11 @@
 #include <string>
 
 namespace utils {
-	class CustomException : public std::exception {
-		std::string errorMessage_;
+	class CustomException final : public std::exception {
+		std::string _errorMessage;
 	public:
-		CustomException(const char* errorMessage);
-		CustomException(std::string errorMessage);
+		explicit CustomException(const char* errorMessage);
+		explicit CustomException(std::string errorMessage);
 		CustomException(const CustomException& other) = default;
 		CustomException(CustomException&& other) = default;
 		CustomException& operator=(const CustomException& other) = default;
