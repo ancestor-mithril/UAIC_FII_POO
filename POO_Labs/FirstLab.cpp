@@ -43,8 +43,9 @@ first_lab::SecondExercise::SecondExercise(const std::string& filePath)
 	while (wordTokenizer >> word) {
 		_words.push_back(word);
 	}
-	std::sort(_words.begin(), _words.end(), [](const std::string& word1, const std::string& word2){
-			return !(word1.size() == word2.size() ? word1 < word2 : word1.size() < word2.size());
+	std::sort(_words.begin(), _words.end(), [](const std::string& word1, const std::string& word2) {
+		std::cout << word1 << " " << word2 << '\n';
+		return !(word1.size() == word2.size() ? word1 <= word2 : word1.size() < word2.size());
 		}
 	);
 }

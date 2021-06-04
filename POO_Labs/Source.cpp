@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <iostream>
 
+#include "EighthLab.h"
 #include "FifthLab.h"
 #include "FirstLab.h"
 #include "FourthLab.h"
@@ -21,6 +22,7 @@ void labFive();
 void labSix();
 void labSeventhExOne();
 void labSeventhExTwo();
+void labEight();
 
 int main(int argc, const char* argv[])
 {
@@ -35,6 +37,7 @@ int main(int argc, const char* argv[])
 	labSix();
 	labSeventhExOne();
 	labSeventhExTwo();
+	labEight();
 	return 0;
 }
 
@@ -301,4 +304,17 @@ void labSeventhExTwo()
 	std::cout << vector.Count() << "\n";
 	std::cout << vector.FirstIndexOf(10) << "\n";
 	std::cout << "\n";
+}
+
+void labEight()
+{
+	using eighth_lab::EighthLab;
+	EighthLab lab{};
+	lab.TokenizeSentence();
+	lab.PrintWords();
+	lab.CountWords();
+	lab.Sort();
+	lab.PrintMap();
+	lab.PrintSorted();
+	
 }
